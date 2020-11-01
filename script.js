@@ -17,10 +17,10 @@ function init() {
    
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
        alert("All fields are required!");
-       event.preventDefault();
+       //event.preventDefault();
    } else if (!isNaN(pilotName.value) || !isNaN(copilotName.value) || isNaN(fuelLevel.value) || isNaN(cargoMass.value)) {
        alert("Please enter a valid response for all fields!");
-       event.preventDefault();
+       //event.preventDefault();
    } else {
       pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch!`;
       copilotStatus.innerHTML = `Copilot ${copilotName.value} is ready for launch!`;
