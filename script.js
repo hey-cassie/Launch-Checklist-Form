@@ -3,6 +3,7 @@ function init() {
    let form = document.querySelector("form")
   
    form.addEventListener("submit", function(event) {
+      event.preventDefault();
       let pilotName =  document.querySelector("input[name=pilotName]");
       let copilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = document.querySelector("input[name=fuelLevel]");
@@ -29,22 +30,23 @@ function init() {
          cargoStatus.innerHTML = "Cargo mass too high for launch";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
-         event.preventDefault();
+         //event.preventDefault();
       } else if (fuelLevel.value < 10000 && cargoMass.value < 10000) {
          faultyItems.style.visibility = "visible";
          fuelStatus.innerHTML = "Fuel level too low for launch";
          cargoStatus.innerHTML = "Cargo mass low enough for launch";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
-         event.preventDefault();
+         //event.preventDefault();
       } else if (fuelLevel.value > 10000 && cargoMass.value > 10000) {
          faultyItems.style.visibility = "visible";
          fuelStatus.innerHTML = "Fuel level high enough for launch";
          cargoStatus.innerHTML = "Cargo mass too high for launch";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
-         event.preventDefault();
+         //event.preventDefault();
       } else {
+         faultyItems.style.visibility = "hidden";
          launchStatus.innerHTML = "Shuttle is ready for launch!";
          launchStatus.style.color = "green";
       }
