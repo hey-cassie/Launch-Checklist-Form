@@ -24,21 +24,21 @@ function init() {
    } else {
       pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch!`;
       copilotStatus.innerHTML = `Copilot ${copilotName.value} is ready for launch!`;
-      if (fuelLevel.value <= 10000 && cargoMass.value >= 10000) {
+      if (fuelLevel.value < 10000 && cargoMass.value > 10000) {
          faultyItems.style.visibility = "visible";
          fuelStatus.innerHTML = "Fuel level too low for launch";
          cargoStatus.innerHTML = "Cargo mass too high for launch";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
          //event.preventDefault();
-      } else if (fuelLevel.value <= 10000 && cargoMass.value < 10000) {
+      } else if (fuelLevel.value < 10000 && cargoMass.value <= 10000) {
          faultyItems.style.visibility = "visible";
          fuelStatus.innerHTML = "Fuel level too low for launch";
          cargoStatus.innerHTML = "Cargo mass low enough for launch";
          launchStatus.innerHTML = "Shuttle not ready for launch";
          launchStatus.style.color = "red";
          //event.preventDefault();
-      } else if (fuelLevel.value > 10000 && cargoMass.value >= 10000) {
+      } else if (fuelLevel.value >= 10000 && cargoMass.value > 10000) {
          faultyItems.style.visibility = "visible";
          fuelStatus.innerHTML = "Fuel level high enough for launch";
          cargoStatus.innerHTML = "Cargo mass too high for launch";
